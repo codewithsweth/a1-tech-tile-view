@@ -126,7 +126,7 @@ const leaderboardData = [
 
 export const LeaderboardSection = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-start gap-1 relative w-full flex-1 overflow-hidden">
+    <div className="flex flex-col items-start gap-1 relative w-full flex-1 overflow-y-auto">
       <div className="flex flex-col items-start gap-4 px-6 py-0 relative w-full bg-[#240909]">
         <div className="flex items-center justify-between px-0 py-6 relative w-full">
           <div className="inline-flex flex-col items-start justify-center gap-4 relative">
@@ -212,8 +212,8 @@ export const LeaderboardSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-4 py-2">
-        <div className="flex flex-col items-center gap-[5px] max-w-[835px] mx-auto">
+      <div className="w-full px-4 py-2 flex justify-center">
+        <div className="flex flex-col items-center gap-[5px] max-w-[835px]">
         {Array.from({ length: 5 }, (_, rowIndex) => (
           <div
             key={rowIndex}
