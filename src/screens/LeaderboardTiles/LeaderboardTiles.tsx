@@ -5,7 +5,7 @@ import { NavigationSection } from "./sections/NavigationSection/NavigationSectio
 
 export const LeaderboardTiles = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-start relative bg-[#372e2e] overflow-hidden">
+    <div className="flex flex-col items-start relative bg-[#372e2e] h-screen overflow-hidden">
       <MainScreenSection />
       <LeaderboardSection />
       <NavigationSection />
