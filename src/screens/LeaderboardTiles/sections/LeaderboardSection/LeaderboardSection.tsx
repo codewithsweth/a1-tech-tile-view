@@ -126,7 +126,7 @@ const leaderboardData = [
 
 export const LeaderboardSection = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-start gap-1 relative w-full flex-1 overflow-y-auto">
+    <div className="flex flex-col items-start relative w-full flex-1 overflow-y-auto">
       <div className="flex flex-col items-start gap-4 px-6 py-0 relative w-full bg-[#240909] sticky top-0 z-10">
         <div className="flex items-center justify-between px-0 py-6 relative w-full">
           <div className="inline-flex flex-col items-start justify-center gap-4 relative">
@@ -171,7 +171,7 @@ export const LeaderboardSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="gap-1 p-4 w-full flex flex-col items-start relative sticky top-[106px] z-10 bg-[#372e2e]">
+      <div className="p-4 w-full flex flex-col items-start relative sticky top-[106px] z-10 bg-[#372e2e]">
         <div className="flex h-12 items-center gap-3 px-2 py-[7px] relative w-full">
           <div className="inline-flex flex-col items-start mt-[-3.00px] mb-[-3.00px] justify-end gap-2 relative">
             <div className="relative flex items-center justify-center w-[72px] mt-[-1.00px] [font-family:'Work_Sans',Helvetica] font-medium text-white-faf text-xs tracking-[0.10px] leading-5">
