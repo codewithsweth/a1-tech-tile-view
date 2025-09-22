@@ -35,9 +35,9 @@ interface ListViewProps {
 
 export const ListView: React.FC<ListViewProps> = ({ data }) => {
   return (
-    <div className="inline-flex flex-col items-start gap-1">
+    <div className="flex flex-col items-center gap-1 w-full max-w-7xl">
       {data.map((entry, index) => (
-        <Card key={index} className="w-[802px] bg-[#18181a] border-0 p-2">
+        <Card key={index} className="w-full border-0 p-2">
           <CardContent className="p-0">
             <div className="flex flex-col items-start">
               <div className="flex items-center gap-9 px-1.5 py-1 w-full bg-white-faf">
