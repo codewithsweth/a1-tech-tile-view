@@ -212,23 +212,16 @@ export const LeaderboardSection = (): JSX.Element => {
 
             <Select defaultValue="tiles">
               <SelectTrigger className="h-[26px] bg-graygray9-18181a border-black rounded text-white-faf">
-                <div className="flex items-center gap-2">
-                  {layoutView === "tiles" ? (
-                    <Grid3X3Icon className="w-3 h-3" />
-                  ) : (
-                    <ListIcon className="w-3 h-3" />
-                  )}
-                  <SelectValue />
-                </div>
+                <SelectValue />
               </SelectTrigger>
-              <SelectContent onValueChange={setLayoutView}>
-                <SelectItem value="tiles" onClick={() => setLayoutView("tiles")}>
+              <SelectContent>
+                <SelectItem value="tiles" onSelect={() => setLayoutView("tiles")}>
                   <div className="flex items-center gap-2">
                     <Grid3X3Icon className="w-3 h-3" />
                     Tiles
                   </div>
                 </SelectItem>
-                <SelectItem value="list" onClick={() => setLayoutView("list")}>
+                <SelectItem value="list" onSelect={() => setLayoutView("list")}>
                   <div className="flex items-center gap-2">
                     <ListIcon className="w-3 h-3" />
                     List
