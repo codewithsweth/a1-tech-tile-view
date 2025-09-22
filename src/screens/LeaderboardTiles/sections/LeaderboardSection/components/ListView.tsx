@@ -51,7 +51,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     </div>
                     <div className="flex w-[89px] items-center justify-center gap-[5px] px-1 py-0">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
-                        SCORE
+                        SCOREd
                       </div>
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.score}
