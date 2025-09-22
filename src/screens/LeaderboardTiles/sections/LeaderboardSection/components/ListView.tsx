@@ -35,9 +35,9 @@ interface ListViewProps {
 
 export const ListView: React.FC<ListViewProps> = ({ data }) => {
   return (
-    <div className="flex flex-col items-center gap-1 w-full max-w-7xl">
+    <div className="inline-flex flex-col items-start gap-1">
       {data.map((entry, index) => (
-        <Card key={index} className="w-full border-0 p-2">
+        <Card key={index} className="w-[802px] bg-[#18181a] border-0 p-2">
           <CardContent className="p-0">
             <div className="flex flex-col items-start">
               <div className="flex items-center gap-9 px-1.5 py-1 w-full bg-white-faf">
@@ -51,7 +51,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     </div>
                     <div className="flex w-[89px] items-center justify-center gap-[5px] px-1 py-0">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
-                        SCOREd
+                        SCORE
                       </div>
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.score}
