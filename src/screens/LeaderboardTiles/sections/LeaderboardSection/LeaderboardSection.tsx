@@ -213,21 +213,21 @@ export const LeaderboardSection = (): JSX.Element => {
       </div>
 
       <div className="w-full px-4 py-2 flex justify-center">
-        <div className="flex flex-col items-center gap-[5px] max-w-[835px]">
+        <div className="flex flex-col items-center gap-[5px] w-full max-w-6xl">
         {Array.from({ length: 5 }, (_, rowIndex) => (
           <div
             key={rowIndex}
-            className="flex w-full items-start justify-center gap-2 py-0 relative"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-2 w-full justify-items-center py-0 relative"
           >
             {leaderboardData
               .slice(rowIndex * 2, rowIndex * 2 + 2)
               .map((person, colIndex) => (
                 <Card
                   key={person.rank}
-                  className="flex w-[400px] gap-1 items-start p-1 relative bg-white-faf border-0"
+                  className="flex w-full max-w-[400px] min-w-[320px] gap-1 items-start p-1 relative bg-white-faf border-0"
                 >
                   <CardContent className="p-0 flex gap-1 w-full">
-                    <div className="flex flex-col w-[186px] h-[165px] items-center gap-2.5 relative rounded-lg overflow-hidden border border-solid border-[#171819]">
+                    <div className="flex flex-col w-full max-w-[186px] min-w-[140px] h-[165px] items-center gap-2.5 relative rounded-lg overflow-hidden border border-solid border-[#171819] flex-shrink-0">
                       <div className="h-[184.08px] relative w-full" />
                     </div>
 
@@ -240,7 +240,7 @@ export const LeaderboardSection = (): JSX.Element => {
                                 RANK
                               </div>
 
-                              <div className="relative flex items-center justify-center w-[87px] h-6 [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-[32px] tracking-[0] leading-[normal] whitespace-nowrap">
+                              <div className="relative flex items-center justify-center w-full h-6 [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-2xl sm:text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
                                 {person.rank}
                               </div>
                             </div>
@@ -250,27 +250,27 @@ export const LeaderboardSection = (): JSX.Element => {
                                 SCORE
                               </div>
 
-                              <div className="relative flex items-center justify-center w-[100px] h-[22px] [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-[32px] tracking-[0] leading-[normal] whitespace-nowrap">
+                              <div className="relative flex items-center justify-center w-full h-[22px] [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-2xl sm:text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
                                 {person.score}
                               </div>
                             </div>
                           </div>
 
-                          <div className="relative w-full [font-family:'Work_Sans',Helvetica] font-semibold text-graygray9-18181a text-xl tracking-[0] leading-[normal]">
+                          <div className="relative w-full [font-family:'Work_Sans',Helvetica] font-semibold text-graygray9-18181a text-lg sm:text-xl tracking-[0] leading-[normal] truncate">
                             {person.name}
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex flex-col w-[206px] items-start justify-center gap-2.5 px-1 py-1.5 relative bg-graygray1-f2f4f8">
+                      <div className="flex flex-col w-full items-start justify-center gap-2.5 px-1 py-1.5 relative bg-graygray1-f2f4f8">
                         <div className="flex flex-col items-start justify-center relative w-full">
-                          <div className="w-[182px] gap-px flex flex-col items-start relative">
+                          <div className="w-full gap-px flex flex-col items-start relative">
                             <div className="flex items-center justify-between w-full relative">
                               <div className="relative w-fit mt-[-1.00px] [font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                                 CURRENT YEAR
                               </div>
 
-                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap flex-shrink-0">
                                 {person.currentYear}
                               </div>
                             </div>
@@ -286,7 +286,7 @@ export const LeaderboardSection = (): JSX.Element => {
                                 PERIOD
                               </div>
 
-                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap flex-shrink-0">
                                 {person.period}
                               </div>
                             </div>
@@ -302,7 +302,7 @@ export const LeaderboardSection = (): JSX.Element => {
                                 OJA
                               </div>
 
-                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                              <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap flex-shrink-0">
                                 {person.oja}
                               </div>
                             </div>
@@ -319,7 +319,7 @@ export const LeaderboardSection = (): JSX.Element => {
                                   GC%
                                 </div>
 
-                                <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                                <div className="relative flex items-center justify-center w-fit [font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap flex-shrink-0">
                                   {person.gc}
                                 </div>
                               </div>
