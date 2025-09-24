@@ -158,7 +158,7 @@ export const LeaderboardSection = (): JSX.Element => {
       <FilterSection setLayoutView={setLayoutView} />
 
       {/* Main Content Section */}
-      <div className="w-full px-4 py-2 flex justify-center">
+      <div className="w-full py-2 flex justify-center">
         {layoutView === "list" ? (
           <ListView data={listViewData} />
         ) : (
