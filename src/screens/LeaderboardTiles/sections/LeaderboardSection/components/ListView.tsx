@@ -48,7 +48,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         alignItems: 'center',
         gap: '4px',
         width: '100%', 
-        maxWidth: '820px', // iPad Pro portrait width
+        maxWidth: '1000px', // iPad Pro portrait width
         px: 2,
       }}
     >
