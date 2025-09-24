@@ -58,7 +58,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
           sx={{ 
             display: 'flex',
             width: '100%',
-            maxWidth: '802px',
+            maxWidth: '1000px',
             padding: '8px',
             flexDirection: 'column',
             alignItems: 'flex-start',
