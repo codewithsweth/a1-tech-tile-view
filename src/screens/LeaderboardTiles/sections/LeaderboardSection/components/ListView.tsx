@@ -56,9 +56,14 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         <Card 
           key={index} 
           sx={{ 
-            width: '100%', 
-            backgroundColor: '#ffffff',
-            border: '3px solid #000000',
+            display: 'flex',
+            width: '802px',
+            padding: '8px',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: '1px',
+            backgroundColor: '#18181A',
+            border: 'none',
             borderRadius: 0,
             boxShadow: 'none',
             position: 'relative',
