@@ -142,6 +142,8 @@ const listViewData = leaderboardData.map((person) => ({
     totalJobs: 45,
   },
   badges: [],
+  hasHighestBadge: person.hasHighestBadge,
+  hasHotStreakBadge: person.hasHotStreakBadge,
 }));
 
 export const LeaderboardSection = (): JSX.Element => {
