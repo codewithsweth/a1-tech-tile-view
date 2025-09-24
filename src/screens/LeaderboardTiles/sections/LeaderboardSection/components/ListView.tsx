@@ -171,59 +171,55 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 >
                   {entry.name}
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 3 }}>
-                  <Box>
-                    <Typography 
-                      variant="caption" 
-                      sx={{ 
-                        fontFamily: 'Work Sans, Helvetica', 
-                        fontWeight: 500, 
-                        color: '#666666', 
-                        fontSize: '10px',
-                        letterSpacing: '0.5px'
-                      }}
-                    >
-                      GRAD DATE
-                    </Typography>
-                    <Typography 
-                      variant="body2" 
-                      sx={{ 
-                        fontFamily: 'Work Sans, Helvetica', 
-                        fontWeight: 600, 
-                        color: '#000000', 
-                        fontSize: '14px',
-                        display: 'block'
-                      }}
-                    >
-                      {entry.gradDate}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography 
-                      variant="caption" 
-                      sx={{ 
-                        fontFamily: 'Work Sans, Helvetica', 
-                        fontWeight: 500, 
-                        color: '#666666', 
-                        fontSize: '10px',
-                        letterSpacing: '0.5px'
-                      }}
-                    >
-                      OPPORTUNITIES
-                    </Typography>
-                    <Typography 
-                      variant="body2" 
-                      sx={{ 
-                        fontFamily: 'Work Sans, Helvetica', 
-                        fontWeight: 600, 
-                        color: '#000000', 
-                        fontSize: '14px',
-                        display: 'block'
-                      }}
-                    >
-                      {entry.opportunities}
-                    </Typography>
-                  </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Typography 
+                    variant="caption" 
+                    sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 500, 
+                      color: '#666666', 
+                      fontSize: '10px',
+                      letterSpacing: '0.5px'
+                    }}
+                  >
+                    GRAD DATE
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 600, 
+                      color: '#000000', 
+                      fontSize: '14px'
+                    }}
+                  >
+                    {entry.gradDate}
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Typography 
+                    variant="caption" 
+                    sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 500, 
+                      color: '#666666', 
+                      fontSize: '10px',
+                      letterSpacing: '0.5px'
+                    }}
+                  >
+                    OPPORTUNITIES
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 600, 
+                      color: '#000000', 
+                      fontSize: '14px'
+                    }}
+                  >
+                    {entry.opportunities}
+                  </Typography>
                 </Box>
               </Box>
 
