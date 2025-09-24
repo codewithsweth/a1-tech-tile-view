@@ -129,14 +129,15 @@ export default function TileView() {
         alignItems: 'center',
         gap: '5px',
         width: '100%',
-        maxWidth: '1536px',
+        maxWidth: '100%',
+        px: 2,
       }}
     >
       {Array.from({ length: 5 }, (_, rowIndex) => (
         <Grid
           container
           key={rowIndex}
-          spacing={0.5}
+          spacing={1}
           sx={{
             width: '100%',
             justifyContent: 'center',
@@ -148,22 +149,24 @@ export default function TileView() {
             .map((person) => (
               <Grid 
                 item 
-                xs={12} 
-                sm={6} 
-                md={6} 
-                lg={6} 
+                xs={12}
+                sm={6}
+                md={6}
+                lg={6}
+                xl={6}
                 key={person.rank}
                 sx={{ 
                   display: 'flex',
                   alignItems: 'stretch',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  maxWidth: { xs: '100%', sm: '50%' },
                 }}
               >
                 <Card
                   sx={{
                     display: 'flex',
-                    width: { xs: '100%', sm: '400px' },
-                    maxWidth: '400px',
+                    width: '100%',
+                    maxWidth: { xs: '400px', sm: '380px', md: '400px' },
                     height: '175px',
                     gap: 0.5,
                     alignItems: 'flex-start',
