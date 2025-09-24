@@ -158,7 +158,7 @@ export default function TileView() {
                   justifyContent: 'center',
                   width: '50%',
                   maxWidth: '50%',
-                  flex: '0 0 50%',
+                  flex: '0 0 50%'
                 }}
               >
                 <Card
