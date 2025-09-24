@@ -1,67 +1,196 @@
-import { FilterIcon, Grid3X3Icon, SearchIcon } from "lucide-react";
-import { ListIcon } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../../../../components/ui/select";
-import { Input } from "../../../../../components/ui/input";
-import { Button } from "../../../../../components/ui/button";
+import React from 'react';
+import { 
+  Box, 
+  TextField, 
+  Button, 
+  Select, 
+  MenuItem, 
+  FormControl, 
+  InputLabel,
+  InputAdornment,
+  Typography
+} from '@mui/material';
+import { 
+  FilterList as FilterIcon, 
+  GridView as Grid3X3Icon, 
+  Search as SearchIcon,
+  List as ListIcon 
+} from '@mui/icons-material';
 
-export default function FilterSection({ setLayoutView }) {
+interface FilterSectionProps {
+  setLayoutView: (view: string) => void;
+}
+
+export default function FilterSection({ setLayoutView }: FilterSectionProps) {
+  const [layout, setLayout] = React.useState('tiles');
+
+  const handleLayoutChange = (event: any) => {
+    const newLayout = event.target.value;
+    setLayout(newLayout);
+    setLayoutView(newLayout);
+  };
+
   return (
-    <div className="p-4 w-full flex flex-col items-start relative sticky top-[106px] z-10 bg-[#372e2e]">
-      <div className="flex h-12 items-center gap-3 px-2 py-[7px] relative w-full">
-        <div className="inline-flex flex-col items-start mt-[-3.00px] mb-[-3.00px] justify-end gap-2 relative">
-          <div className="relative flex items-center justify-center w-[72px] mt-[-1.00px] [font-family:'Work_Sans',Helvetica] font-medium text-white-faf text-xs tracking-[0.10px] leading-5">
-            LAYOUT
-          </div>
-
-          <Select
-            defaultValue="tiles"
-            onValueChange={(value) => setLayoutView(value)}
+    <Box
+      sx={{
+        p: 2,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        position: 'sticky',
+        top: '106px',
+        zIndex: 10,
+        backgroundColor: '#372e2e',
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          height: '48px',
+          alignItems: 'center',
+          gap: 1.5,
+          px: 1,
+          py: '7px',
+          width: '100%',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'inline-flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'flex-end',
+            gap: 1,
+          }}
+        >
+          <Typography
+            variant="caption"
+            sx={{
+              fontFamily: 'Work Sans, Helvetica',
+              fontWeight: 500,
+              color: '#fafafa',
+              fontSize: '12px',
+              letterSpacing: '0.10px',
+              lineHeight: '20px',
+            }}
           >
-            <SelectTrigger className="h-[26px] bg-graygray9-18181a border-black rounded text-white-faf">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="tiles">
-                <div className="flex items-center gap-2">
-                  <Grid3X3Icon className="w-3 h-3" />
+            LAYOUT
+          </Typography>
+
+          <FormControl size="small" sx={{ minWidth: 120 }}>
+            <Select
+              value={layout}
+              onChange={handleLayoutChange}
+              sx={{
+                height: '26px',
+                backgroundColor: '#18181a',
+                border: '1px solid black',
+                borderRadius: 1,
+                color: '#fafafa',
+                '& .MuiOutlinedInput-notchedOutline': {
+                  border: 'none',
+                },
+                '& .MuiSelect-icon': {
+                  color: '#fafafa',
+                },
+              }}
+            >
+              <MenuItem value="tiles">
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Grid3X3Icon sx={{ width: 12, height: 12 }} />
                   Tiles
-                </div>
-              </SelectItem>
-              <SelectItem value="list">
-                <div className="flex items-center gap-2">
-                  <ListIcon className="w-3 h-3" />
+                </Box>
+              </MenuItem>
+              <MenuItem value="list">
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <ListIcon sx={{ width: 12, height: 12 }} />
                   List
-                </div>
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+                </Box>
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
 
-        <div className="flex w-[308px] h-[38px] items-center gap-2.5 mt-[-2.00px] mb-[-2.00px] bg-graygray7-6a6a71 rounded overflow-hidden border border-solid border-black relative">
-          <div className="flex justify-between px-[15px] py-2.5 flex-1 w-full items-center relative">
-            <Input
-              placeholder="Find a technician"
-              className="border-0 bg-transparent text-white-faf placeholder:text-white-faf h-auto p-0 focus-visible:ring-0"
-            />
-            <SearchIcon className="w-[18px] h-[18px]" />
-          </div>
-        </div>
+        <Box
+          sx={{
+            display: 'flex',
+            width: '308px',
+            height: '38px',
+            alignItems: 'center',
+            gap: 1.25,
+            backgroundColor: '#6a6a71',
+            borderRadius: 1,
+            border: '1px solid black',
+            overflow: 'hidden',
+          }}
+        >
+          <TextField
+            placeholder="Find a technician"
+            variant="outlined"
+            size="small"
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                border: 'none',
+                backgroundColor: 'transparent',
+                color: '#fafafa',
+                height: '38px',
+                '& fieldset': {
+                  border: 'none',
+                },
+                '& input::placeholder': {
+                  color: '#fafafa',
+                  opacity: 1,
+                },
+              },
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon sx={{ width: 18, height: 18, color: '#fafafa' }} />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Box>
 
-        <div className="flex items-end flex-1 justify-end gap-2 relative">
-          <Button className="h-[27px] bg-black border border-solid rounded text-white-faf hover:bg-black/80">
-            <span className="[font-family:'Work_Sans',Helvetica] font-semibold text-sm">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'flex-end',
+            flex: 1,
+            justifyContent: 'flex-end',
+            gap: 1,
+          }}
+        >
+          <Button
+            variant="outlined"
+            sx={{
+              height: '27px',
+              backgroundColor: 'black',
+              border: '1px solid black',
+              borderRadius: 1,
+              color: '#fafafa',
+              '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              },
+              textTransform: 'none',
+            }}
+            endIcon={<FilterIcon sx={{ width: 12, height: 12 }} />}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Work Sans, Helvetica',
+                fontWeight: 600,
+                fontSize: '14px',
+              }}
+            >
               Filters
-            </span>
-            <FilterIcon className="w-3 h-3 ml-2" />
+            </Typography>
           </Button>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
