@@ -46,7 +46,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 2,
+        gap: '4px',
         width: '100%', 
         maxWidth: '820px', // iPad Pro portrait width
         px: 2,
