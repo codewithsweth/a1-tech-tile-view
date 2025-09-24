@@ -713,7 +713,6 @@ export default function TileView() {
                             >
                               DOOR SALES
                             </Typography>
-                            </Typography>
 
                             <Box
                               sx={{
