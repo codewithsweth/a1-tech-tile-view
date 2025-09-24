@@ -1,7 +1,13 @@
 import React from "react";
-import { Card, CardContent } from "../../../../../components/ui/card";
-import { Badge } from "../../../../../components/ui/badge";
-import { Avatar, AvatarFallback } from "../../../../../components/ui/avatar";
+import { 
+  Card, 
+  CardContent, 
+  Avatar, 
+  Chip, 
+  Box, 
+  Typography,
+  Divider
+} from '@mui/material';
 
 interface LeaderboardEntry {
   rank: number;
@@ -35,99 +41,259 @@ interface ListViewProps {
 
 export const ListView: React.FC<ListViewProps> = ({ data }) => {
   return (
-    <div className="flex flex-col items-center gap-1 w-full max-w-7xl">
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 1,
+        width: '100%',
+        maxWidth: '1280px',
+      }}
+    >
       {data.map((entry, index) => (
-        <Card key={index} className="w-full bg-[#18181a] border-0 p-2 rounded-none">
-          <CardContent className="p-0">
-            <div className="flex flex-col items-start">
-              <div className="flex items-center gap-9 px-1.5 py-1 w-full bg-white-faf">
-                <div className="inline-flex items-center gap-3 px-0 py-0.5">
-                  <div className="flex flex-col w-[92px] items-center justify-center">
-                    <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
+        <Card 
+          key={index} 
+          sx={{ 
+            width: '100%', 
+            backgroundColor: '#18181a', 
+            border: 0, 
+            borderRadius: 0,
+            p: 2 
+          }}
+        >
+          <CardContent sx={{ p: 0 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 9, 
+                px: 1.5, 
+                py: 1, 
+                width: '100%', 
+                backgroundColor: '#fafafa' 
+              }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 3, px: 0, py: 0.5 }}>
+                  <Box sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    width: '92px', 
+                    alignItems: 'center', 
+                    justifyContent: 'center' 
+                  }}>
+                    <Typography variant="caption" sx={{ 
+                      fontFamily: 'Avenir Next, Helvetica', 
+                      fontWeight: 500, 
+                      color: '#18181a', 
+                      fontSize: '12px' 
+                    }}>
                       RANK
-                    </div>
-                    <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-4xl text-center tracking-[0] leading-[normal]">
+                    </Typography>
+                    <Typography variant="h3" sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 'bold', 
+                      color: '#1c880b', 
+                      fontSize: '36px', 
+                      textAlign: 'center' 
+                    }}>
                       {entry.rank}
-                    </div>
-                    <div className="flex w-[89px] items-center justify-center gap-[5px] px-1 py-0">
-                      <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
-                        SCOREd
-                      </div>
-                      <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
+                    </Typography>
+                    <Box sx={{ 
+                      display: 'flex', 
+                      width: '89px', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      gap: '5px', 
+                      px: 1, 
+                      py: 0 
+                    }}>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Avenir Next, Helvetica', 
+                        fontWeight: 500, 
+                        color: '#18181a', 
+                        fontSize: '12px' 
+                      }}>
+                        SCORE
+                      </Typography>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Work Sans, Helvetica', 
+                        fontWeight: 'bold', 
+                        color: '#1c880b', 
+                        fontSize: '12px' 
+                      }}>
                         {entry.score}
-                      </div>
-                    </div>
-                  </div>
-                  <Avatar className="w-[81px] h-[72px] rounded-lg border border-[#353539]">
-                    <AvatarFallback className="bg-gray-200 text-gray-600 text-lg font-semibold">
-                      {entry.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </AvatarFallback>
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Avatar sx={{ 
+                    width: 81, 
+                    height: 72, 
+                    borderRadius: 2, 
+                    border: '1px solid #353539',
+                    backgroundColor: '#e0e0e0',
+                    color: '#666',
+                    fontSize: '18px',
+                    fontWeight: 600
+                  }}>
+                    {entry.name.split(" ").map((n) => n[0]).join("")}
                   </Avatar>
-                  <div className="flex flex-col w-[142px] items-start gap-2 pt-2.5 pb-0 px-0">
-                    <div className="[font-family:'Work_Sans',Helvetica] font-semibold text-graygray9-18181a text-xl tracking-[0] leading-[normal] whitespace-nowrap">
+                  <Box sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    width: '142px', 
+                    alignItems: 'flex-start', 
+                    gap: 2, 
+                    pt: 2.5, 
+                    pb: 0, 
+                    px: 0 
+                  }}>
+                    <Typography variant="h6" sx={{ 
+                      fontFamily: 'Work Sans, Helvetica', 
+                      fontWeight: 600, 
+                      color: '#18181a', 
+                      fontSize: '20px' 
+                    }}>
                       {entry.name}
-                    </div>
-                    <div className="flex flex-col items-start gap-[5px] w-full">
-                      <div className="flex items-start gap-1 w-full">
-                        <div className="flex gap-[5px] flex-1 items-center">
-                          <div className="w-[57px] [font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-[10px] tracking-[0] leading-[normal]">
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '5px', width: '100%' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, width: '100%' }}>
+                        <Box sx={{ display: 'flex', gap: '5px', flex: 1, alignItems: 'center' }}>
+                          <Typography variant="caption" sx={{ 
+                            width: '57px', 
+                            fontFamily: 'Avenir Next, Helvetica', 
+                            fontWeight: 500, 
+                            color: '#18181a', 
+                            fontSize: '10px' 
+                          }}>
                             GRAD DATE
-                          </div>
-                          <div className="flex-1 [font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal]">
+                          </Typography>
+                          <Typography variant="caption" sx={{ 
+                            flex: 1, 
+                            fontFamily: 'Work Sans, Helvetica', 
+                            fontWeight: 'bold', 
+                            color: '#353539', 
+                            fontSize: '12px', 
+                            textAlign: 'center' 
+                          }}>
                             {entry.gradDate}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-[9px] w-full">
-                        <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-[10px] tracking-[0] leading-[normal]">
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: '9px', width: '100%' }}>
+                        <Typography variant="caption" sx={{ 
+                          fontFamily: 'Avenir Next, Helvetica', 
+                          fontWeight: 500, 
+                          color: '#18181a', 
+                          fontSize: '10px' 
+                        }}>
                           OPPORTUNITIES
-                        </div>
-                        <div className="[font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                        </Typography>
+                        <Typography variant="caption" sx={{ 
+                          fontFamily: 'Work Sans, Helvetica', 
+                          fontWeight: 'bold', 
+                          color: '#353539', 
+                          fontSize: '12px', 
+                          textAlign: 'center' 
+                        }}>
                           {entry.opportunities}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="inline-flex flex-col items-start justify-end gap-[9px] pt-3.5 pb-px px-0">
-                  <div className="[font-family:'Avenir_Next-Bold',Helvetica] font-bold text-graygray9-18181a text-xs tracking-[0] leading-[normal] whitespace-nowrap">
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box sx={{ 
+                  display: 'inline-flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'flex-start', 
+                  justifyContent: 'flex-end', 
+                  gap: '9px', 
+                  pt: 3.5, 
+                  pb: '1px', 
+                  px: 0 
+                }}>
+                  <Typography variant="caption" sx={{ 
+                    fontFamily: 'Avenir Next, Helvetica', 
+                    fontWeight: 'bold', 
+                    color: '#18181a', 
+                    fontSize: '12px' 
+                  }}>
                     Revenue
-                  </div>
-                  <div className="flex items-center gap-8 w-full">
-                    <div className="inline-flex gap-1 items-center">
-                      <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-[10px] tracking-[0] leading-[normal]">
+                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 8, width: '100%' }}>
+                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Avenir Next, Helvetica', 
+                        fontWeight: 500, 
+                        color: '#18181a', 
+                        fontSize: '10px' 
+                      }}>
                         PERIOD
-                      </div>
-                      <div className="[font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                      </Typography>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Work Sans, Helvetica', 
+                        fontWeight: 'bold', 
+                        color: '#353539', 
+                        fontSize: '12px', 
+                        textAlign: 'center' 
+                      }}>
                         {entry.revenue.period}
-                      </div>
-                    </div>
-                    <div className="inline-flex gap-1 items-center">
-                      <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-[10px] tracking-[0] leading-[normal]">
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Avenir Next, Helvetica', 
+                        fontWeight: 500, 
+                        color: '#18181a', 
+                        fontSize: '10px' 
+                      }}>
                         SELECTED YR
-                      </div>
-                      <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                      </Typography>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Work Sans, Helvetica', 
+                        fontWeight: 'bold', 
+                        color: '#1c880b', 
+                        fontSize: '12px', 
+                        textAlign: 'center' 
+                      }}>
                         {entry.revenue.selectedYr}
-                      </div>
-                      <img className="w-2 h-2" alt="I checkbox blank" />
-                    </div>
-                    <div className="inline-flex gap-1 items-center">
-                      <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-[10px] tracking-[0] leading-[normal]">
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Avenir Next, Helvetica', 
+                        fontWeight: 500, 
+                        color: '#18181a', 
+                        fontSize: '10px' 
+                      }}>
                         LIFETIME
-                      </div>
-                      <div className="[font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                      </Typography>
+                      <Typography variant="caption" sx={{ 
+                        fontFamily: 'Work Sans, Helvetica', 
+                        fontWeight: 'bold', 
+                        color: '#353539', 
+                        fontSize: '12px', 
+                        textAlign: 'center' 
+                      }}>
                         {entry.revenue.lifetime}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col h-[80.25px] items-start justify-center gap-2.5 px-6 py-2 w-full bg-white">
-              <div className="flex items-start gap-4 w-full">
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box sx={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              height: '80.25px', 
+              alignItems: 'flex-start', 
+              justifyContent: 'center', 
+              gap: 2.5, 
+              px: 6, 
+              py: 2, 
+              width: '100%', 
+              backgroundColor: 'white' 
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 4, width: '100%' }}>
                 <div className="flex flex-col items-start gap-1 flex-1">
                   <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
                     <div className="flex items-center gap-2.5 flex-1">
@@ -255,8 +421,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   </div>
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
                 </div>
-              </div>
-            </div>
+              </Box>
+            </Box>
           </CardContent>
         </Card>
       ))}
@@ -307,6 +473,6 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         <div className="absolute top-[25px] left-3.5 w-7 h-1 bg-[#1c880b] border border-solid border-white" />
         <img className="absolute top-0 left-[7px] w-[41px] h-[17px]" alt="Vector" src="/vector-5.svg" />
       </div>
-    </div>
+    </Box>
   );
 };
