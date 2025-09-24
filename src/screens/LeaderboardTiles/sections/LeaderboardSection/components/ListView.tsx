@@ -167,7 +167,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontWeight: 600, 
                     color: '#000000', 
                     fontSize: '24px',
-                    lineHeight: 1.2
+                    lineHeight: 1.2,
+                    mb: 0
                   }}
                 >
                   {entry.name}
