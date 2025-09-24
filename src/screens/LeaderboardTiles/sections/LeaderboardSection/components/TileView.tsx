@@ -162,7 +162,7 @@ export default function TileView() {
                   sx={{
                     display: 'flex',
                     width: '100%',
-                    height: '100%',
+                    height: '175px',
                     gap: 0.5,
                     alignItems: 'flex-start',
                     p: 0.5,
