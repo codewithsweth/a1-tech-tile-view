@@ -667,21 +667,24 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     </Typography>
                   </Box>
                   <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
-                  <Typography 
-                    variant="caption" 
-                    sx={{ 
-                      fontFamily: 'Work Sans, Helvetica', 
-                      fontWeight: 500, 
-                      color: '#999999', 
-                      fontSize: '10px',
-                      textAlign: 'right'
-                    }}
-                  >
-                    <span style={{ color: '#000000', fontWeight: 'bold' }}>{entry.metrics.fiveStarJobs}</span>
-                    <span style={{ color: '#999999' }}> (5 Star Jobs) / </span>
-                    <span style={{ color: '#000000', fontWeight: 'bold' }}>{entry.metrics.totalJobs}</span>
-                    <span style={{ color: '#999999' }}> (Total Jobs)</span>
-                  </Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <Typography 
+                      variant="caption" 
+                      sx={{ 
+                        fontFamily: 'Work Sans, Helvetica', 
+                        fontWeight: 500, 
+                        color: '#999999', 
+                        fontSize: '10px',
+                        textAlign: 'right'
+                      }}
+                    >
+                      <span style={{ color: '#000000', fontWeight: 'bold' }}>{entry.metrics.fiveStarJobs}</span>
+                      <span style={{ color: '#999999' }}> (5 Star Jobs) / </span>
+                      <span style={{ color: '#000000', fontWeight: 'bold' }}>{entry.metrics.totalJobs}</span>
+                      <span style={{ color: '#999999' }}> (Total Jobs)</span>
+                    </Typography>
+                    <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mt: 0.5 }} />
+                  </Box>
                 </Box>
               </Box>
             </Box>
