@@ -8,6 +8,7 @@ import {
   Typography,
   Divider
 } from '@mui/material';
+import { Badge } from '../../../../../components/ui/badge';
 
 interface LeaderboardEntry {
   rank: number;
