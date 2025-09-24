@@ -155,13 +155,15 @@ export default function TileView() {
                 key={person.rank}
                 sx={{ 
                   display: 'flex',
-                  alignItems: 'stretch'
+                  alignItems: 'stretch',
+                  justifyContent: 'center'
                 }}
               >
                 <Card
                   sx={{
                     display: 'flex',
-                    width: '100%',
+                    width: { xs: '100%', sm: '400px' },
+                    maxWidth: '400px',
                     height: '175px',
                     gap: 0.5,
                     alignItems: 'flex-start',
@@ -268,15 +270,16 @@ export default function TileView() {
 
                               <Typography
                                 sx={{
-                                  display: 'flex',
+                                  display: 'flex', 
                                   alignItems: 'center',
                                   justifyContent: 'center',
-                                  width: '100%',
+                                  width: '100%', 
                                   height: '24px',
                                   fontFamily: 'Work Sans, Helvetica',
                                   fontWeight: 'bold',
                                   color: '#1d890b',
                                   fontSize: { xs: '24px', sm: '30px' },
+                                  textAlign: 'center',
                                   letterSpacing: 0,
                                   lineHeight: 'normal',
                                   whiteSpace: 'nowrap',
@@ -310,15 +313,16 @@ export default function TileView() {
 
                               <Typography
                                 sx={{
-                                  display: 'flex',
+                                  display: 'flex', 
                                   alignItems: 'center',
                                   justifyContent: 'center',
-                                  width: '100%',
+                                  width: '100%', 
                                   height: '22px',
                                   fontFamily: 'Work Sans, Helvetica',
                                   fontWeight: 'bold',
                                   color: '#1d890b',
                                   fontSize: { xs: '24px', sm: '30px' },
+                                  textAlign: 'center',
                                   letterSpacing: 0,
                                   lineHeight: 'normal',
                                   whiteSpace: 'nowrap',
