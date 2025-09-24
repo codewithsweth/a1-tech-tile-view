@@ -79,7 +79,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
               display: 'flex', 
               alignItems: 'center', 
               gap: 2, 
-              p: 2,
+              padding: '8px 12px',
               backgroundColor: '#f8f9fa'
             }}>
               {/* Rank Section */}
