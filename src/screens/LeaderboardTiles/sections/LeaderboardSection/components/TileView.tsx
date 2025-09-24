@@ -187,7 +187,7 @@ export default function TileView() {
                         width: '100%',
                         maxWidth: '180px',
                         minWidth: '160px',
-                        height: '175px',
+                        height: '163px',
                         alignItems: 'center',
                         gap: 1.25,
                         borderRadius: '8px',
@@ -196,7 +196,7 @@ export default function TileView() {
                         flexShrink: 0,
                       }}
                     >
-                      <Box sx={{ height: '100%', width: '100%', backgroundColor: '#f5f5f5' }} />
+                      <Box sx={{ height: '163px', width: '100%', backgroundColor: '#f5f5f5' }} />
                     </Box>
 
                     <Box
@@ -205,7 +205,7 @@ export default function TileView() {
                         flexDirection: 'column',
                         alignItems: 'flex-start',
                         flex: 1,
-                        height: '100%',
+                        height: '163px',
                       }}
                     >
                       <Box
@@ -214,9 +214,9 @@ export default function TileView() {
                           flexDirection: 'column',
                           alignItems: 'flex-start',
                           justifyContent: 'flex-end',
-                          gap: 1.25,
+                          gap: 0.5,
                           width: '100%',
-                          flex: 1,
+                          height: '80px',
                         }}
                       >
                         <Box
@@ -225,13 +225,13 @@ export default function TileView() {
                             flexDirection: 'column',
                             alignItems: 'flex-start',
                             justifyContent: 'flex-end',
-                            gap: 0.75,
-                            pt: 0.75,
+                            gap: 0.5,
+                            pt: 0.5,
                             pb: 0.5,
                             px: 0.75,
                             width: '100%',
                             backgroundColor: '#fafafa',
-                            flex: 1,
+                            height: '100%',
                           }}
                         >
                           <Box
@@ -239,7 +239,6 @@ export default function TileView() {
                               display: 'flex',
                               alignItems: 'flex-end',
                               width: '100%',
-                              mb: 0.5,
                             }}
                           >
                             <Box
@@ -356,11 +355,12 @@ export default function TileView() {
                           width: '100%',
                           alignItems: 'flex-start',
                           justifyContent: 'center',
-                          gap: 1.25,
-                          px: 0.5,
-                          py: 0.75,
+                          gap: 0.25,
+                          px: 0.75,
+                          py: 0.5,
                           backgroundColor: '#f2f4f8',
-                          minHeight: '120px',
+                          height: '83px',
+                          overflow: 'hidden',
                         }}
                       >
                         <Box
@@ -370,13 +370,13 @@ export default function TileView() {
                             alignItems: 'flex-start',
                             justifyContent: 'center',
                             width: '100%',
-                            flex: 1,
+                            height: '100%',
                           }}
                         >
                           <Box
                             sx={{
                               width: '100%',
-                              gap: 0.125,
+                              gap: 0.25,
                               display: 'flex',
                               flexDirection: 'column',
                               alignItems: 'flex-start',
@@ -541,65 +541,44 @@ export default function TileView() {
                             <Box
                               sx={{
                                 display: 'flex',
-                                flexDirection: 'column',
-                                height: '16px',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
                                 width: '100%',
                               }}
                             >
-                              <Box
+                              <Typography
+                                sx={{
+                                  fontFamily: 'Avenir Next-Medium, Helvetica',
+                                  fontWeight: 500,
+                                  color: '#18181a',
+                                  fontSize: '12px',
+                                  letterSpacing: 0,
+                                  lineHeight: 'normal',
+                                }}
+                              >
+                                GC%
+                              </Typography>
+
+                              <Typography
                                 sx={{
                                   display: 'flex',
                                   alignItems: 'center',
-                                  justifyContent: 'space-between',
-                                  width: '100%',
+                                  justifyContent: 'center',
+                                  fontFamily: 'Work Sans, Helvetica',
+                                  fontWeight: 'bold',
+                                  color: '#353539',
+                                  fontSize: '12px',
+                                  textAlign: 'center',
+                                  letterSpacing: 0,
+                                  lineHeight: 'normal',
+                                  whiteSpace: 'nowrap',
+                                  flexShrink: 0,
                                 }}
                               >
-                                <Typography
-                                  sx={{
-                                    fontFamily: 'Avenir Next-Medium, Helvetica',
-                                    fontWeight: 500,
-                                    color: '#18181a',
-                                    fontSize: '12px',
-                                    letterSpacing: 0,
-                                    lineHeight: 'normal',
-                                  }}
-                                >
-                                  GC%
-                                </Typography>
-
-                                <Typography
-                                  sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontFamily: 'Work Sans, Helvetica',
-                                    fontWeight: 'bold',
-                                    color: '#353539',
-                                    fontSize: '12px',
-                                    textAlign: 'center',
-                                    letterSpacing: 0,
-                                    lineHeight: 'normal',
-                                    whiteSpace: 'nowrap',
-                                    flexShrink: 0,
-                                  }}
-                                >
-                                  {person.gc}
-                                </Typography>
-                              </Box>
+                                {person.gc}
+                              </Typography>
                             </Box>
 
-                            <Box
-                              component="img"
-                              sx={{
-                                width: '100%',
-                                height: '1px',
-                                objectFit: 'cover',
-                              }}
-                              alt="Line"
-                              src="/line-16.svg"
-                            />
                           </Box>
                         </Box>
                       </Box>
