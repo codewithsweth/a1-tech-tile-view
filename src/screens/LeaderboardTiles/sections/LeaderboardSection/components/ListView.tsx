@@ -47,7 +47,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 1,
+        gap: 0.125,
         width: '100%',
         maxWidth: '1280px',
       }}
@@ -58,29 +58,39 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
           sx={{ 
             width: '100%', 
             backgroundColor: '#18181a', 
-            border: 0, 
+            border: 0,
             borderRadius: 0,
-            p: 2 
+            p: 0,
+            height: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
           }}
         >
-          <CardContent sx={{ p: 0 }}>
+          <CardContent sx={{ 
+            p: 0, 
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            '&:last-child': { pb: 0 }
+          }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <Box sx={{ 
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: 9, 
-                px: 1.5, 
-                py: 1, 
+                px: 3, 
+                py: 2, 
                 width: '100%', 
                 backgroundColor: '#fafafa' 
               }}>
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 3, px: 0, py: 0.5 }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
                   <Box sx={{ 
                     display: 'flex', 
                     flexDirection: 'column', 
                     width: '92px', 
-                    alignItems: 'center', 
-                    justifyContent: 'center' 
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '72px'
                   }}>
                     <Typography variant="caption" sx={{ 
                       fontFamily: 'Avenir Next, Helvetica', 
@@ -95,7 +105,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontWeight: 'bold', 
                       color: '#1c880b', 
                       fontSize: '36px', 
-                      textAlign: 'center' 
+                      textAlign: 'center',
+                      lineHeight: 1
                     }}>
                       {entry.rank}
                     </Typography>
@@ -105,8 +116,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       alignItems: 'center', 
                       justifyContent: 'center', 
                       gap: '5px', 
-                      px: 1, 
-                      py: 0 
+                      mt: 0.5
                     }}>
                       <Typography variant="caption" sx={{ 
                         fontFamily: 'Avenir Next, Helvetica', 
@@ -134,7 +144,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     backgroundColor: '#e0e0e0',
                     color: '#666',
                     fontSize: '18px',
-                    fontWeight: 600
+                    fontWeight: 600,
+                    flexShrink: 0
                   }}>
                     {entry.name.split(" ").map((n) => n[0]).join("")}
                   </Avatar>
@@ -143,49 +154,48 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     flexDirection: 'column', 
                     width: '142px', 
                     alignItems: 'flex-start', 
-                    gap: 2, 
-                    pt: 2.5, 
-                    pb: 0, 
-                    px: 0 
+                    gap: 1,
+                    justifyContent: 'center',
+                    minHeight: '72px'
                   }}>
                     <Typography variant="h6" sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 600, 
                       color: '#18181a', 
-                      fontSize: '20px' 
+                      fontSize: '20px',
+                      lineHeight: 1.2
                     }}>
                       {entry.name}
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '5px', width: '100%' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, width: '100%' }}>
-                        <Box sx={{ display: 'flex', gap: '5px', flex: 1, alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0.5, width: '100%' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', flex: 1 }}>
                           <Typography variant="caption" sx={{ 
-                            width: '57px', 
                             fontFamily: 'Avenir Next, Helvetica', 
                             fontWeight: 500, 
                             color: '#18181a', 
-                            fontSize: '10px' 
+                            fontSize: '10px',
+                            mr: 1
                           }}>
                             GRAD DATE
                           </Typography>
                           <Typography variant="caption" sx={{ 
-                            flex: 1, 
                             fontFamily: 'Work Sans, Helvetica', 
                             fontWeight: 'bold', 
                             color: '#353539', 
-                            fontSize: '12px', 
-                            textAlign: 'center' 
+                            fontSize: '12px'
                           }}>
                             {entry.gradDate}
                           </Typography>
                         </Box>
                       </Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: '9px', width: '100%' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
                         <Typography variant="caption" sx={{ 
                           fontFamily: 'Avenir Next, Helvetica', 
                           fontWeight: 500, 
                           color: '#18181a', 
-                          fontSize: '10px' 
+                          fontSize: '10px',
+                          mr: 1
                         }}>
                           OPPORTUNITIES
                         </Typography>
@@ -193,8 +203,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                           fontFamily: 'Work Sans, Helvetica', 
                           fontWeight: 'bold', 
                           color: '#353539', 
-                          fontSize: '12px', 
-                          textAlign: 'center' 
+                          fontSize: '12px'
                         }}>
                           {entry.opportunities}
                         </Typography>
@@ -206,11 +215,9 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   display: 'inline-flex', 
                   flexDirection: 'column', 
                   alignItems: 'flex-start', 
-                  justifyContent: 'flex-end', 
-                  gap: '9px', 
-                  pt: 3.5, 
-                  pb: '1px', 
-                  px: 0 
+                  justifyContent: 'center',
+                  gap: 1,
+                  minHeight: '72px'
                 }}>
                   <Typography variant="caption" sx={{ 
                     fontFamily: 'Avenir Next, Helvetica', 
@@ -220,8 +227,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   }}>
                     Revenue
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 8, width: '100%' }}>
-                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%', flexWrap: 'wrap' }}>
+                    <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
                       <Typography variant="caption" sx={{ 
                         fontFamily: 'Avenir Next, Helvetica', 
                         fontWeight: 500, 
@@ -234,13 +241,12 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#353539', 
-                        fontSize: '12px', 
-                        textAlign: 'center' 
+                        fontSize: '12px'
                       }}>
                         {entry.revenue.period}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
                       <Typography variant="caption" sx={{ 
                         fontFamily: 'Avenir Next, Helvetica', 
                         fontWeight: 500, 
@@ -253,13 +259,12 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#1c880b', 
-                        fontSize: '12px', 
-                        textAlign: 'center' 
+                        fontSize: '12px'
                       }}>
                         {entry.revenue.selectedYr}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: 'inline-flex', gap: 1, alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
                       <Typography variant="caption" sx={{ 
                         fontFamily: 'Avenir Next, Helvetica', 
                         fontWeight: 500, 
@@ -272,8 +277,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#353539', 
-                        fontSize: '12px', 
-                        textAlign: 'center' 
+                        fontSize: '12px'
                       }}>
                         {entry.revenue.lifetime}
                       </Typography>
@@ -285,37 +289,37 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             <Box sx={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              height: '80.25px', 
+              minHeight: '80px',
               alignItems: 'flex-start', 
               justifyContent: 'center', 
-              gap: 2.5, 
-              px: 6, 
+              gap: 1.5, 
+              px: 3, 
               py: 2, 
               width: '100%', 
               backgroundColor: 'white' 
             }}>
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 4, width: '100%' }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2, width: '100%' }}>
                 <div className="flex flex-col items-start gap-1 flex-1">
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         OJA
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.oja}
                       </div>
                     </div>
                   </div>
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         CJA
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.cja}
                       </div>
@@ -324,26 +328,26 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
                 </div>
                 <div className="flex flex-col items-start gap-1 flex-1">
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         CR%
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.cr}
                       </div>
                     </div>
                   </div>
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
-                  <div className="flex pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         GC%
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-graygray8-353539 text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.gc}
                       </div>
@@ -352,26 +356,26 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
                 </div>
                 <div className="flex flex-col items-start gap-1 flex-1">
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         PAL GC%
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-greengreen6-1d890b text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.palGc}
                       </div>
                     </div>
                   </div>
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         MCR%
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div
                         className={`[font-family:'Work_Sans',Helvetica] font-bold text-xs tracking-[0] leading-[normal] whitespace-nowrap ${
                           entry.rank === 3 || entry.rank === 4 || entry.rank === 5
@@ -386,20 +390,20 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
                 </div>
                 <div className="flex flex-col items-start gap-1 flex-1">
-                  <div className="flex gap-8 pl-2 pr-0 py-0 w-full items-center">
-                    <div className="flex items-center gap-2.5 flex-1">
+                  <div className="flex justify-between w-full items-center px-1">
+                    <div className="flex items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal]">
                         RR%
                       </div>
                     </div>
-                    <div className="inline-flex items-center justify-end gap-2.5">
+                    <div className="flex items-center">
                       <div className="[font-family:'Work_Sans',Helvetica] font-bold text-[#1c880b] text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         {entry.metrics.rr}
                       </div>
                     </div>
                   </div>
                   <img className="w-full h-px object-cover" alt="Line" src="/line-14.svg" />
-                  <div className="flex flex-col items-start gap-[7px] pl-2 pr-0 py-0.5 w-full">
+                  <div className="flex flex-col items-start gap-1 px-1 py-0.5 w-full">
                     <div className="flex w-full items-center">
                       <div className="[font-family:'Avenir_Next-Medium',Helvetica] font-medium text-graygray9-18181a text-xs tracking-[0] leading-[normal] whitespace-nowrap">
                         CSAT%
@@ -410,7 +414,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="inline-flex flex-col items-start justify-center gap-[7px] px-[3px] py-0">
+                    <div className="flex flex-col items-start justify-center gap-1 px-1 py-0">
                       <div className="[font-family:'Avenir_Next-Bold',Helvetica] font-bold text-graygray9-18181a text-[9px] tracking-[0] leading-[normal] whitespace-nowrap">
                         <span className="text-[#171819]">{entry.metrics.fiveStarJobs}</span>
                         <span className="text-[#171819]">&nbsp;</span>
@@ -429,7 +433,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
       ))}
 
       {/* Achievement Badges - positioned absolutely for list view */}
-      <div className="absolute top-[374px] left-[652px] w-[135px] h-[59px]">
+      <Box sx={{ position: 'absolute', top: '374px', left: '652px', width: '135px', height: '59px' }}>
         <div className="inline-flex items-center gap-2.5">
           <div className="relative w-[71px] h-[59.38px] shadow-shadow-1">
             <img className="absolute top-[-9px] left-0 w-[78px] h-[78px]" alt="Ellipse" src="/ellipse-7-1.svg" />
@@ -459,8 +463,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="absolute top-[902px] left-[741px] w-14 h-[63px]">
+      </Box>
+      <Box sx={{ position: 'absolute', top: '902px', left: '741px', width: '56px', height: '63px' }}>
         <img className="-top-2 absolute -left-3 w-[78px] h-[78px]" alt="Ellipse" src="/ellipse-7.svg" />
         <div className="top-2.5 left-[7px] bg-greengreen4-85dc74 absolute w-[41px] h-[42px] rounded-[20.5px/21px]" />
         <div className="absolute top-[19px] left-2 w-[39px] h-10 bg-white-faf rounded-[19.5px/20px]" />
@@ -473,7 +477,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         <div className="absolute top-[18px] left-3.5 w-7 h-1.5 bg-[#1c880b] border border-solid border-white" />
         <div className="absolute top-[25px] left-3.5 w-7 h-1 bg-[#1c880b] border border-solid border-white" />
         <img className="absolute top-0 left-[7px] w-[41px] h-[17px]" alt="Vector" src="/vector-5.svg" />
-      </div>
+      </Box>
     </Box>
   );
 };
