@@ -137,13 +137,11 @@ export default function TileView() {
         <Grid
           container
           key={rowIndex}
-          spacing={0.5}
+          spacing={1}
           sx={{
             width: '100%',
             justifyContent: 'center',
             mb: 0.5,
-            display: 'flex',
-            flexWrap: 'nowrap',
           }}
         >
           {leaderboardData
@@ -151,21 +149,24 @@ export default function TileView() {
             .map((person) => (
               <Grid 
                 item 
+                xs={12}
+                sm={6}
+                md={6}
+                lg={6}
+                xl={6}
                 key={person.rank}
                 sx={{ 
                   display: 'flex',
                   alignItems: 'stretch',
                   justifyContent: 'center',
-                  width: '50%',
-                  maxWidth: '50%',
-                  flex: '0 0 50%'
+                  maxWidth: { xs: '100%', sm: '50%' },
                 }}
               >
                 <Card
                   sx={{
                     display: 'flex',
                     width: '100%',
-                    maxWidth: '400px',
+                    maxWidth: { xs: '400px', sm: '380px', md: '400px' },
                     height: '175px',
                     gap: 0.5,
                     alignItems: 'flex-start',
