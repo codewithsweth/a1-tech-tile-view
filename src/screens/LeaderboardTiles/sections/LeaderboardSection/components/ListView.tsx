@@ -80,7 +80,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
               <Box sx={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
-                alignItems: 'flex-start',
+                alignItems: 'center',
                 minWidth: '60px'
               }}>
                 <Typography 
@@ -90,7 +90,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontWeight: 500, 
                     color: '#666666', 
                     fontSize: '10px',
-                    letterSpacing: '0.5px'
+                    letterSpacing: '0.5px',
+                    textAlign: 'center'
                   }}
                 >
                   RANK
@@ -103,7 +104,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     color: entry.rank <= 3 ? '#1d890b' : '#333333', 
                     fontSize: '36px', 
                     lineHeight: 1,
-                    mt: 0.5
+                    mt: 0.5,
+                    textAlign: 'center'
                   }}
                 >
                   {entry.rank}
