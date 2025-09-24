@@ -187,7 +187,7 @@ export default function TileView() {
                         width: '100%',
                         maxWidth: '180px',
                         minWidth: '160px',
-                        height: '165px',
+                        height: '175px',
                         alignItems: 'center',
                         gap: 1.25,
                         borderRadius: '8px',
