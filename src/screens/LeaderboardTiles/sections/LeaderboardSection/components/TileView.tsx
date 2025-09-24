@@ -136,49 +136,67 @@ export default function TileView() {
         <Grid
           container
           key={rowIndex}
-          spacing={0.25}
+          spacing={0.5}
           sx={{
             width: '100%',
             justifyContent: 'center',
-            py: 0,
+            mb: 0.5,
           }}
         >
           {leaderboardData
             .slice(rowIndex * 2, rowIndex * 2 + 2)
             .map((person) => (
-              <Grid item xs={12} sm={6} md={6} lg={4} key={person.rank}>
+              <Grid 
+                item 
+                xs={12} 
+                sm={6} 
+                md={6} 
+                lg={6} 
+                key={person.rank}
+                sx={{ 
+                  display: 'flex',
+                  alignItems: 'stretch'
+                }}
+              >
                 <Card
                   sx={{
                     display: 'flex',
                     width: '100%',
-                    maxWidth: '400px',
-                    minWidth: '320px',
-                    gap: '4px',
+                    height: '100%',
+                    gap: 0.5,
                     alignItems: 'flex-start',
-                    p: '4px',
+                    p: 0.5,
                     backgroundColor: '#fafafa',
                     border: 0,
+                    borderRadius: 0,
                     position: 'relative',
                   }}
                 >
-                  <CardContent sx={{ p: 0, display: 'flex', gap: '4px', width: '100%' }}>
+                  <CardContent sx={{ 
+                    p: 0, 
+                    display: 'flex', 
+                    gap: 0.5, 
+                    width: '100%',
+                    height: '100%',
+                    '&:last-child': { pb: 0 }
+                  }}>
                     <Box
                       sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         width: '100%',
-                        maxWidth: '186px',
-                        minWidth: '140px',
+                        maxWidth: '180px',
+                        minWidth: '160px',
                         height: '165px',
                         alignItems: 'center',
-                        gap: '10px',
+                        gap: 1.25,
                         borderRadius: '8px',
                         overflow: 'hidden',
                         border: '1px solid #171819',
                         flexShrink: 0,
                       }}
                     >
-                      <Box sx={{ height: '184.08px', width: '100%' }} />
+                      <Box sx={{ height: '100%', width: '100%', backgroundColor: '#f5f5f5' }} />
                     </Box>
 
                     <Box
@@ -187,6 +205,7 @@ export default function TileView() {
                         flexDirection: 'column',
                         alignItems: 'flex-start',
                         flex: 1,
+                        height: '100%',
                       }}
                     >
                       <Box
@@ -195,8 +214,9 @@ export default function TileView() {
                           flexDirection: 'column',
                           alignItems: 'flex-start',
                           justifyContent: 'flex-end',
-                          gap: 1.5,
+                          gap: 1.25,
                           width: '100%',
+                          flex: 1,
                         }}
                       >
                         <Box
@@ -205,12 +225,13 @@ export default function TileView() {
                             flexDirection: 'column',
                             alignItems: 'flex-start',
                             justifyContent: 'flex-end',
-                            gap: 1,
-                            pt: '6px',
-                            pb: '4px',
-                            px: '6px',
+                            gap: 0.75,
+                            pt: 0.75,
+                            pb: 0.5,
+                            px: 0.75,
                             width: '100%',
                             backgroundColor: '#fafafa',
+                            flex: 1,
                           }}
                         >
                           <Box
@@ -218,6 +239,7 @@ export default function TileView() {
                               display: 'flex',
                               alignItems: 'flex-end',
                               width: '100%',
+                              mb: 0.5,
                             }}
                           >
                             <Box
@@ -225,7 +247,7 @@ export default function TileView() {
                                 display: 'inline-flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                gap: '4px',
+                                gap: 0.5,
                                 flex: 1,
                               }}
                             >
@@ -270,7 +292,7 @@ export default function TileView() {
                                 display: 'inline-flex',
                                 flexDirection: 'column',
                                 alignItems: 'flex-start',
-                                gap: '4px',
+                                gap: 0.5,
                                 flex: 1,
                               }}
                             >
@@ -334,10 +356,11 @@ export default function TileView() {
                           width: '100%',
                           alignItems: 'flex-start',
                           justifyContent: 'center',
-                          gap: '10px',
-                          px: '4px',
-                          py: '6px',
+                          gap: 1.25,
+                          px: 0.5,
+                          py: 0.75,
                           backgroundColor: '#f2f4f8',
+                          minHeight: '120px',
                         }}
                       >
                         <Box
@@ -347,12 +370,13 @@ export default function TileView() {
                             alignItems: 'flex-start',
                             justifyContent: 'center',
                             width: '100%',
+                            flex: 1,
                           }}
                         >
                           <Box
                             sx={{
                               width: '100%',
-                              gap: '1px',
+                              gap: 0.125,
                               display: 'flex',
                               flexDirection: 'column',
                               alignItems: 'flex-start',
