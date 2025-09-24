@@ -71,6 +71,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
         >
           <CardContent sx={{ 
             p: 0,
+           width: '100%',
             '&:last-child': { pb: 0 }
           }}>
             {/* Header Section */}
