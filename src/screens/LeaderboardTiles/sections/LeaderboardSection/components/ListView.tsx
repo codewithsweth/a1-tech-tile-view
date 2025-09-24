@@ -675,7 +675,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontWeight: 500, 
                         color: '#999999', 
                         fontSize: '10px',
-                        textAlign: 'right'
+                        textAlign: 'right',
+                        whiteSpace: 'nowrap'
                       }}
                     >
                       <span style={{ color: '#000000', fontWeight: 'bold' }}>{entry.metrics.fiveStarJobs}</span>
