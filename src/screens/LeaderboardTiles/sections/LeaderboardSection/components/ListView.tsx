@@ -157,7 +157,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 flexDirection: 'column', 
                 gap: 1,
                 minWidth: '200px',
-                maxWidth: '250px'
+                maxWidth: '250px',
+                mb: 0
               }}>
                 <Typography 
                   variant="h5" 
@@ -502,6 +503,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.cja}
                   </Typography>
                 </Box>
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
               </Box>
 
               {/* Middle Left Column */}
@@ -555,6 +557,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.gc}
                   </Typography>
                 </Box>
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
               </Box>
 
               {/* Middle Right Column */}
@@ -608,6 +611,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.mcr}
                   </Typography>
                 </Box>
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
               </Box>
 
               {/* Right Column */}
@@ -662,6 +666,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       {entry.metrics.csat}
                     </Typography>
                   </Box>
+                  <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                   <Typography 
                     variant="caption" 
                     sx={{ 
