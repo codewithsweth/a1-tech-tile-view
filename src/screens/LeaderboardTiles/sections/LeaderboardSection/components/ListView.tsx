@@ -76,7 +76,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             p: 0,
            width: '100%',
             height: '100%',
-            '&:last-child': { pb: 0 }
+            '&:last-child': { pb: 0 },
+            backgroundColor: '#f8f9fa'
           }}>
             {/* Header Section */}
             <Box sx={{ 
@@ -469,7 +470,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             }}>
               {/* Left Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
@@ -493,7 +494,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.oja}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -523,7 +524,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Middle Left Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
@@ -547,7 +548,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.cr}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -577,7 +578,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Middle Right Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
@@ -601,7 +602,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.palGc}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -631,7 +632,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Right Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
@@ -655,9 +656,9 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     {entry.metrics.rr}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', mb: 0.5 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%'}}>
                     <Typography 
                       variant="caption" 
                       sx={{ 
@@ -681,7 +682,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       {entry.metrics.csat}
                     </Typography>
                   </Box>
-                  <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} />
+                  {/* <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0' }} /> */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                     <Typography 
                       variant="caption" 
