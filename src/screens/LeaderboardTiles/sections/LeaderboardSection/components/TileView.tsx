@@ -137,7 +137,7 @@ export default function TileView() {
         <Grid
           container
           key={rowIndex}
-          spacing={1}
+          spacing={0.5}
           sx={{
             width: '100%',
             justifyContent: 'center',
@@ -148,22 +148,20 @@ export default function TileView() {
             .slice(rowIndex * 2, rowIndex * 2 + 2)
             .map((person) => (
               <Grid 
-                item 
+                item
+                xs={6}
                 key={person.rank}
                 sx={{ 
                   display: 'flex',
                   alignItems: 'stretch',
                   justifyContent: 'center',
-                  width: '50%',
-                  maxWidth: '50%',
-                  flex: '0 0 50%',
                 }}
               >
                 <Card
                   sx={{
                     display: 'flex',
                     width: '100%',
-                    maxWidth: '380px',
+                    maxWidth: '360px',
                     height: '175px',
                     gap: 0.5,
                     alignItems: 'flex-start',
