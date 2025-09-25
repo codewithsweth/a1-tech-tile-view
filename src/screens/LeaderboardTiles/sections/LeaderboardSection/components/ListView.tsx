@@ -59,6 +59,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             display: 'flex',
             width: '100%',
             maxWidth: '1000px',
+            maxHeight: '170px',
             padding: '8px',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -68,11 +69,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             borderRadius: 0,
             boxShadow: 'none',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
           <CardContent sx={{ 
             p: 0,
            width: '100%',
+            height: '100%',
             '&:last-child': { pb: 0 }
           }}>
             {/* Header Section */}
@@ -80,7 +83,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
               display: 'flex', 
               alignItems: 'center', 
               gap: 2, 
-              padding: '8px 12px',
+              padding: '6px 12px',
               backgroundColor: '#f8f9fa'
             }}>
               {/* Rank Section */}
@@ -88,7 +91,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 display: 'flex', 
                 flexDirection: 'column', 
                 alignItems: 'center',
-                minWidth: '60px'
+                minWidth: '50px'
               }}>
                 <Typography 
                   variant="caption" 
@@ -96,7 +99,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontFamily: 'Work Sans, Helvetica', 
                     fontWeight: 500, 
                     color: '#666666', 
-                    fontSize: '10px',
+                    fontSize: '9px',
                     letterSpacing: '0.5px',
                     textAlign: 'center'
                   }}
@@ -109,22 +112,22 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontFamily: 'Work Sans, Helvetica', 
                     fontWeight: 'bold', 
                     color: entry.rank <= 3 ? '#1d890b' : '#333333', 
-                    fontSize: '36px', 
+                    fontSize: '28px', 
                     lineHeight: 1,
-                    mt: 0.5,
+                    mt: 0.25,
                     textAlign: 'center'
                   }}
                 >
                   {entry.rank}
                 </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.25 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '10px'
+                      fontSize: '9px'
                     }}
                   >
                     SCORE
@@ -135,7 +138,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: entry.rank <= 3 ? '#1d890b' : '#333333', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     {entry.score}
@@ -146,13 +149,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
               {/* Profile Image */}
               <Avatar 
                 sx={{ 
-                  width: 80, 
-                  height: 80, 
+                  width: 60, 
+                  height: 60, 
                   borderRadius: 1,
                   border: '2px solid #000000',
                   backgroundColor: '#e0e0e0',
                   color: '#666',
-                  fontSize: '18px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   flexShrink: 0
                 }}
@@ -164,8 +167,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
               <Box sx={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
-                gap: 1,
-                minWidth: '200px',
+                gap: 0.5,
+                minWidth: '180px',
                 maxWidth: '250px',
                 mb: 0
               }}>
@@ -175,21 +178,21 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontFamily: 'Work Sans, Helvetica', 
                     fontWeight: 600, 
                     color: '#000000', 
-                    fontSize: '24px',
+                    fontSize: '18px',
                     lineHeight: 1.2,
                     mb: 0
                   }}
                 >
                   {entry.name}
                 </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '10px',
+                      fontSize: '9px',
                       letterSpacing: '0.5px'
                     }}
                   >
@@ -201,20 +204,20 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 600, 
                       color: '#000000', 
-                      fontSize: '14px'
+                      fontSize: '12px'
                     }}
                   >
                     {entry.gradDate}
                   </Typography>
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '10px',
+                      fontSize: '9px',
                       letterSpacing: '0.5px'
                     }}
                   >
@@ -226,7 +229,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 600, 
                       color: '#000000', 
-                      fontSize: '14px'
+                      fontSize: '12px'
                     }}
                   >
                     {entry.opportunities}
@@ -239,9 +242,9 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 display: 'flex', 
                 flexDirection: 'column', 
                 alignItems: 'flex-start',
-                gap: 1,
+                gap: 0.5,
                 flex: 1,
-                minWidth: '300px'
+                minWidth: '250px'
               }}>
                 <Typography 
                   variant="caption" 
@@ -249,12 +252,12 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                     fontFamily: 'Work Sans, Helvetica', 
                     fontWeight: 600, 
                     color: '#000000', 
-                    fontSize: '14px'
+                    fontSize: '12px'
                   }}
                 >
                   Revenue
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center' }}>
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography 
                       variant="caption" 
@@ -262,7 +265,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 500, 
                         color: '#666666', 
-                        fontSize: '10px',
+                        fontSize: '9px',
                         letterSpacing: '0.5px',
                         display: 'block'
                       }}
@@ -275,7 +278,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#000000', 
-                        fontSize: '14px'
+                        fontSize: '12px'
                       }}
                     >
                       {entry.revenue.period}
@@ -288,7 +291,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 500, 
                         color: '#666666', 
-                        fontSize: '10px',
+                        fontSize: '9px',
                         letterSpacing: '0.5px',
                         display: 'block'
                       }}
@@ -301,7 +304,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#1d890b', 
-                        fontSize: '14px'
+                        fontSize: '12px'
                       }}
                     >
                       {entry.revenue.selectedYr}
@@ -314,7 +317,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 500, 
                         color: '#666666', 
-                        fontSize: '10px',
+                        fontSize: '9px',
                         letterSpacing: '0.5px',
                         display: 'block'
                       }}
@@ -327,7 +330,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#000000', 
-                        fontSize: '14px'
+                        fontSize: '12px'
                       }}
                     >
                       {entry.revenue.lifetime}
@@ -341,8 +344,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 <Box
                   sx={{
                     position: 'absolute',
-                    top: 16,
-                    right: 16,
+                    top: 8,
+                    right: 8,
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
@@ -352,8 +355,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   {entry.hasHotStreakBadge && (
                     <Box
                       sx={{
-                        width: '60px',
-                        height: '50px',
+                        width: '50px',
+                        height: '40px',
                         position: 'relative',
                         flexShrink: 0,
                       }}
@@ -361,17 +364,17 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       <Box
                         sx={{
                           position: 'relative',
-                          width: '60px',
-                          height: '50px',
+                          width: '50px',
+                          height: '40px',
                         }}
                       >
                         <Box
                           sx={{
                             position: 'absolute',
-                            top: '8px',
-                            left: '15px',
-                            width: '30px',
-                            height: '30px',
+                            top: '4px',
+                            left: '10px',
+                            width: '25px',
+                            height: '25px',
                             backgroundColor: '#f3e6b9',
                             borderRadius: '50%',
                           }}
@@ -379,10 +382,10 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         <Box
                           sx={{
                             position: 'absolute',
-                            top: '12px',
-                            left: '19px',
-                            width: '22px',
-                            height: '22px',
+                            top: '7px',
+                            left: '13px',
+                            width: '19px',
+                            height: '19px',
                             backgroundColor: '#ffcb49',
                             borderRadius: '50%',
                           }}
@@ -390,13 +393,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         <Box
                           sx={{
                             position: 'absolute',
-                            top: '38px',
-                            left: '5px',
+                            top: '30px',
+                            left: '2px',
                             backgroundColor: '#e5631a',
                             color: 'white',
-                            fontSize: '8px',
+                            fontSize: '7px',
                             fontWeight: 'bold',
-                            padding: '2px 6px',
+                            padding: '1px 4px',
                             borderRadius: '2px',
                           }}
                         >
@@ -409,8 +412,8 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                   {entry.hasHighestBadge && (
                     <Box
                       sx={{
-                        width: '50px',
-                        height: '50px',
+                        width: '40px',
+                        height: '40px',
                         position: 'relative',
                         flexShrink: 0,
                       }}
@@ -418,17 +421,17 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       <Box
                         sx={{
                           position: 'relative',
-                          width: '50px',
-                          height: '50px',
+                          width: '40px',
+                          height: '40px',
                         }}
                       >
                         <Box
                           sx={{
                             position: 'absolute',
-                            top: '8px',
-                            left: '10px',
-                            width: '30px',
-                            height: '30px',
+                            top: '4px',
+                            left: '5px',
+                            width: '25px',
+                            height: '25px',
                             backgroundColor: '#0c63ca',
                             borderRadius: '50%',
                           }}
@@ -436,13 +439,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         <Box
                           sx={{
                             position: 'absolute',
-                            top: '38px',
-                            left: '8px',
+                            top: '30px',
+                            left: '4px',
                             backgroundColor: '#075093',
                             color: 'white',
-                            fontSize: '8px',
+                            fontSize: '7px',
                             fontWeight: 'bold',
-                            padding: '2px 6px',
+                            padding: '1px 4px',
                             borderRadius: '2px',
                           }}
                         >
@@ -458,20 +461,22 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
             {/* Metrics Section */}
             <Box sx={{ 
               display: 'flex', 
-              p: 2,
+              p: 1.5,
               backgroundColor: '#ffffff',
-              gap: 4
+              gap: 2,
+              height: 'calc(100% - 80px)',
+              overflow: 'hidden'
             }}>
               {/* Left Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     OJA
@@ -482,13 +487,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#1d890b', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.oja}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 1 }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -496,7 +501,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     CJA
@@ -507,7 +512,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#1d890b', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.cja}
@@ -518,14 +523,14 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Middle Left Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     CR%
@@ -536,13 +541,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#1d890b', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.cr}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 1 }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -550,7 +555,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     GC%
@@ -561,7 +566,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#666666', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.gc}
@@ -572,14 +577,14 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Middle Right Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     PAL GC%
@@ -590,13 +595,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#1d890b', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.palGc}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 1 }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography 
                     variant="caption" 
@@ -604,7 +609,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     MCR%
@@ -615,7 +620,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: entry.rank >= 3 && entry.rank <= 5 ? '#e5631a' : '#666666', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.mcr}
@@ -626,14 +631,14 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
 
               {/* Right Column */}
               <Box sx={{ flex: 1 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                   <Typography 
                     variant="caption" 
                     sx={{ 
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 500, 
                       color: '#666666', 
-                      fontSize: '12px'
+                      fontSize: '10px'
                     }}
                   >
                     RR%
@@ -644,13 +649,13 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                       fontFamily: 'Work Sans, Helvetica', 
                       fontWeight: 'bold', 
                       color: '#1d890b', 
-                      fontSize: '14px'
+                      fontSize: '11px'
                     }}
                   >
                     {entry.metrics.rr}
                   </Typography>
                 </Box>
-                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 1 }} />
+                <Box sx={{ width: '100%', height: '1px', backgroundColor: '#e0e0e0', mb: 0.5 }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', mb: 0.5 }}>
                     <Typography 
@@ -659,7 +664,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 500, 
                         color: '#666666', 
-                        fontSize: '12px'
+                        fontSize: '10px'
                       }}
                     >
                       CSAT%
@@ -670,7 +675,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 'bold', 
                         color: '#1d890b', 
-                        fontSize: '14px'
+                        fontSize: '11px'
                       }}
                     >
                       {entry.metrics.csat}
@@ -684,7 +689,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                         fontFamily: 'Work Sans, Helvetica', 
                         fontWeight: 500, 
                         color: '#999999', 
-                        fontSize: '10px',
+                        fontSize: '8px',
                         textAlign: 'right',
                         whiteSpace: 'nowrap'
                       }}
