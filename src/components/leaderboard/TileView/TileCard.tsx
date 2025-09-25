@@ -43,7 +43,8 @@ export const TileCard: React.FC<TileCardProps> = ({ person }) => {
         width: '100%',
         height: '100%',
         '&:last-child': { pb: 0 }
-        <ImageContainer />
+      }}>
+        <ImageContainer rank={person.rank} name={person.name} />
         
         <Box
           sx={{
@@ -74,8 +75,6 @@ export const TileCard: React.FC<TileCardProps> = ({ person }) => {
           rank={person.rank}
         />
       </CardContent>
-    }
-    }
     </Card>
   );
 };
