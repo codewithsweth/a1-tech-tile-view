@@ -96,6 +96,7 @@ export const ListView: React.FC<ListViewProps> = ({ data }) => {
                 name={entry.name}
                 gradDate={entry.gradDate}
                 opportunities={entry.opportunities}
+                rank={entry.rank}
               />
 
               <RevenueSection revenue={entry.revenue} />

@@ -43,7 +43,6 @@ export const TileCard: React.FC<TileCardProps> = ({ person }) => {
         width: '100%',
         height: '100%',
         '&:last-child': { pb: 0 }
-      }}>
         <ImageContainer />
         
         <Box

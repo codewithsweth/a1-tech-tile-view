@@ -6,31 +6,57 @@ interface ProfileSectionProps {
   name: string;
   gradDate: string;
   opportunities: number;
+  rank: number;
 }
 
 export const ProfileSection: React.FC<ProfileSectionProps> = ({ 
   name, 
   gradDate, 
-  opportunities 
+  opportunities,
+  rank
 }) => {
+  // Generate consistent image based on rank
+  const getProfileImage = (rank: number) => {
+    const imageIds = [
+      '1472099645', // Professional man
+      '2379004', // Professional woman
+      '1438761', // Business person
+      '2182970', // Professional headshot
+      '1674752', // Business professional
+      '2381069', // Corporate headshot
+      '1043471', // Professional portrait
+      '2379005', // Business person
+      '1559486', // Professional headshot
+      '2182973'  // Corporate portrait
+    ];
+    
+    const imageId = imageIds[(rank - 1) % imageIds.length];
+    return `https://images.pexels.com/photos/${imageId}/pexels-photo-${imageId}.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop`;
+  };
+
   return (
     <>
       {/* Profile Image */}
-      <Avatar 
+      <Box
         sx={{ 
           width: 60, 
           height: 60, 
           borderRadius: 1,
           border: '2px solid #000000',
-          backgroundColor: '#e0e0e0',
-          color: '#666',
-          fontSize: '14px',
-          fontWeight: 600,
-          flexShrink: 0
+          flexShrink: 0,
+          overflow: 'hidden'
         }}
       >
-        {name.split(" ").map((n) => n[0]).join("")}
-      </Avatar>
+        <img 
+          src={getProfileImage(rank)}
+          alt={name}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      </Box>
 
       {/* Name and Details */}
       <Box sx={{ 
