@@ -184,9 +184,9 @@ export default function TileView() {
                       sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '40%',
-                        maxWidth: '40%',
-                        minWidth: '40%',
+                        width: '120px',
+                        maxWidth: '120px',
+                        minWidth: '120px',
                         height: '163px',
                         alignItems: 'center',
                         gap: 1.25,
@@ -204,8 +204,7 @@ export default function TileView() {
                         display: 'inline-flex',
                         flexDirection: 'column',
                         alignItems: 'flex-start',
-                        width: '60%',
-                        flex: '0 0 60%',
+                        flex: 1,
                         height: '163px',
                       }}
                     >
