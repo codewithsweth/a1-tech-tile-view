@@ -74,6 +74,8 @@ export const TileCard: React.FC<TileCardProps> = ({ person }) => {
           rank={person.rank}
         />
       </CardContent>
+    }
+    }
     </Card>
   );
 };
