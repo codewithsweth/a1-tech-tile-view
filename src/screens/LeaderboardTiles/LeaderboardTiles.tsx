@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from '@mui/material';
-import { LeaderboardSection } from "./sections/LeaderboardSection/LeaderboardSection";
+import { LeaderboardSection } from "../../pages/LeaderboardSection";
 import { MainScreenSection } from "./sections/MainScreenSection/MainScreenSection";
 import { NavigationSection } from "./sections/NavigationSection/NavigationSection";
 

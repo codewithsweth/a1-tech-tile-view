@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ListView } from "./components/ListView";
-import TileView from "./components/TileView";
-import FilterSection from "./components/FilterSection";
-import HeaderSection from "./components/HeaderSection";
+import { ListView } from "../components/leaderboard/ListView";
+import TileView from "../components/leaderboard/TileView";
+import FilterSection from "../components/leaderboard/FilterSection";
+import HeaderSection from "../components/leaderboard/HeaderSection";
 
 const leaderboardData = [
   {
